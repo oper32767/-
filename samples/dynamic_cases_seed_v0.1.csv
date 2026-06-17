@@ -1,0 +1,11 @@
+sample_id,source_type,source_title,source_url,question_text,question_time,divination_time,timezone,location,method_available,chart_text,known_result,result_time,usable_for,reliability_grade,gate_status,blocking_reasons,warning_reasons,notes
+DYNAMIC-0001,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第一筆動態實占案例,
+DYNAMIC-0002,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第二筆動態實占案例,
+DYNAMIC-0003,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第三筆動態實占案例,
+DYNAMIC-0004,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第四筆動態實占案例,
+DYNAMIC-0005,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第五筆動態實占案例,
+DYNAMIC-0006,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第六筆動態實占案例,
+DYNAMIC-0007,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第七筆動態實占案例,
+DYNAMIC-0008,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第八筆動態實占案例,
+DYNAMIC-0009,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第九筆動態實占案例,
+DYNAMIC-0010,,,,,,,unknown,unknown,,,,,,D,REVIEW,,待收第十筆動態實占案例,
