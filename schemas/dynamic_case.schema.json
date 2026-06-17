@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oper32767/-/schemas/dynamic_case.schema.json",
+  "title": "DynamicCase 動態實占樣本格式",
+  "description": "用於六壬＋奇門＋交叉驗證的動態運算層樣本。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sample_id",
+    "source_type",
+    "source_url",
+    "question_text",
+    "divination_time",
+    "timezone",
+    "known_result",
+    "usable_for",
+    "reliability_grade",
+    "gate_status"
+  ],
+  "properties": {
+    "sample_id": {"type": "string", "description": "樣本編號，例如 DYNAMIC-0001"},
+    "source_type": {"type": "string", "enum": ["teaching_case", "social_post", "public_event", "news_event", "other"], "description": "來源類型：教學實占、社群問事、公開事件、新聞事件等"},
+    "source_url": {"type": "string", "description": "來源網址或來源註記"},
+    "source_title": {"type": "string", "description": "來源標題"},
+    "question_text": {"type": "string", "description": "問事內容"},
+    "question_time": {"type": "string", "description": "問事時間；若未知可空白"},
+    "divination_time": {"type": "string", "description": "起課／起局時間，保留原文格式"},
+    "timezone": {"type": "string", "description": "時區，例如 Asia/Taipei、UTC+8；未知則 WARN"},
+    "location": {"type": "string", "description": "起課／起局地點；未知填 unknown"},
+    "method_available": {"type": "array", "items": {"type": "string", "enum": ["liu_ren", "qi_men"]}, "description": "可用術數：六壬、奇門"},
+    "chart_text": {"type": "string", "description": "原文盤面、三傳、九宮等；可空白待重建"},
+    "known_result": {"type": "string", "description": "已知結果或回饋"},
+    "result_time": {"type": "string", "description": "結果發生時間；未知可空白"},
+    "usable_for": {"type": "array", "items": {"type": "string", "enum": ["liu_ren", "qi_men", "cross_check"]}, "description": "可用於六壬、奇門或交叉驗證"},
+    "reliability_grade": {"type": "string", "enum": ["A", "B", "C", "D"], "description": "可靠度：A最高，D最低"},
+    "gate_status": {"type": "string", "enum": ["RUN_READY", "WARN_ONLY", "REVIEW", "BLOCK"], "description": "是否可進測試"},
+    "blocking_reasons": {"type": "array", "items": {"type": "string"}, "description": "阻擋原因"},
+    "warning_reasons": {"type": "array", "items": {"type": "string"}, "description": "警告原因"},
+    "notes": {"type": "string", "description": "備註"}
+  }
+}
