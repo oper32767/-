@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oper32767/-/schemas/static_case.schema.json",
+  "title": "StaticCase 靜態命例樣本格式",
+  "description": "用於八字＋紫微斗數＋交叉驗證的靜態運算層樣本。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sample_id",
+    "source_type",
+    "source_url",
+    "gender",
+    "birth_datetime",
+    "birth_datetime_precision",
+    "birth_place",
+    "known_life_events",
+    "reliability_grade",
+    "gate_status"
+  ],
+  "properties": {
+    "sample_id": {"type": "string", "description": "樣本編號，例如 STATIC-0001"},
+    "source_type": {"type": "string", "enum": ["teaching_case", "classic_text", "social_post", "public_figure", "other"], "description": "來源類型：教學案例、古籍命例、社群貼文、名人命例等"},
+    "source_url": {"type": "string", "description": "來源網址或來源註記"},
+    "source_title": {"type": "string", "description": "來源標題"},
+    "gender": {"type": "string", "enum": ["male", "female", "unknown"], "description": "性別"},
+    "birth_datetime": {"type": "string", "description": "出生年月日時，保留原文格式"},
+    "birth_datetime_precision": {"type": "string", "enum": ["full_datetime", "date_only", "year_month_day_unknown_time", "uncertain"], "description": "出生時間精度"},
+    "birth_place": {"type": "string", "description": "出生地；未知填 unknown"},
+    "timezone": {"type": "string", "description": "時區；未知填 unknown"},
+    "bazi_chart": {"type": "string", "description": "八字盤；可空白待重排"},
+    "ziwei_chart": {"type": "string", "description": "紫微斗數盤；可空白待重排"},
+    "known_life_events": {
+      "type": "array",
+      "description": "已知生平事件，用於驗證",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_date", "event_type", "event_description"],
+        "properties": {
+          "event_date": {"type": "string", "description": "事件日期，可為年份或精確日期"},
+          "event_type": {"type": "string", "description": "事件類型：財、官、婚姻、疾病、遷移、事故、成就等"},
+          "event_description": {"type": "string", "description": "事件描述"},
+          "evidence_url": {"type": "string", "description": "事件證據網址或來源註記"}
+        }
+      }
+    },
+    "expected_validation_axis": {"type": "array", "items": {"type": "string"}, "description": "預計驗證軸，例如 wealth、career、marriage、health"},
+    "reliability_grade": {"type": "string", "enum": ["A", "B", "C", "D"], "description": "可靠度：A最高，D最低"},
+    "gate_status": {"type": "string", "enum": ["RUN_READY", "WARN_ONLY", "REVIEW", "BLOCK"], "description": "是否可進測試"},
+    "blocking_reasons": {"type": "array", "items": {"type": "string"}, "description": "阻擋原因"},
+    "warning_reasons": {"type": "array", "items": {"type": "string"}, "description": "警告原因"},
+    "notes": {"type": "string", "description": "備註"}
+  }
+}
