@@ -1,0 +1,11 @@
+sample_id,source_type,source_title,source_url,gender,birth_datetime,birth_datetime_precision,birth_place,timezone,bazi_chart,ziwei_chart,known_life_events,event_dates,expected_validation_axis,reliability_grade,gate_status,blocking_reasons,warning_reasons,notes
+STATIC-0001,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第一筆靜態命例,
+STATIC-0002,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第二筆靜態命例,
+STATIC-0003,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第三筆靜態命例,
+STATIC-0004,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第四筆靜態命例,
+STATIC-0005,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第五筆靜態命例,
+STATIC-0006,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第六筆靜態命例,
+STATIC-0007,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第七筆靜態命例,
+STATIC-0008,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第八筆靜態命例,
+STATIC-0009,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第九筆靜態命例,
+STATIC-0010,,,,unknown,,uncertain,unknown,unknown,,,,,,D,REVIEW,,待收第十筆靜態命例,
