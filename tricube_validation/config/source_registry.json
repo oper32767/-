@@ -1,0 +1,62 @@
+{
+  "registry_version": "0.1",
+  "updated_at": "2026-07-14",
+  "sources": [
+    {
+      "source_id": "SRC-BZ-001",
+      "name": "BaziQA",
+      "repository": "ChenJiangxi/BaziQA",
+      "license_claim": "MIT",
+      "domains": ["bazi"],
+      "use": ["multiple_choice_benchmark", "pilot_blind_eval"],
+      "initial_status": "AUDITING",
+      "known_risks": [
+        "Dataset answer is not independent reality truth",
+        "Birth provenance is not embedded per item",
+        "Public repository may have training-data contamination",
+        "Multiple-choice format does not fully test open-ended reasoning"
+      ]
+    },
+    {
+      "source_id": "SRC-BZZW-001",
+      "name": "MingLi-Bench",
+      "repository": "DestinyLinker/MingLi-Bench",
+      "license_claim": "MIT",
+      "domains": ["bazi", "ziwei", "bazi_ziwei"],
+      "use": ["multiple_choice_benchmark", "chart_reasoning_ablation"],
+      "initial_status": "AUDITING",
+      "known_risks": [
+        "Competition answer may encode a school-specific interpretation",
+        "Precomputed chart provider must be independently checked",
+        "Public repository may have training-data contamination",
+        "Country/location fields can be too coarse for time correction"
+      ]
+    },
+    {
+      "source_id": "SRC-BIRTH-001",
+      "name": "Astro-Databank",
+      "repository": null,
+      "domains": ["bazi", "ziwei", "bazi_ziwei"],
+      "use": ["public_person_birth_input"],
+      "initial_status": "MANUAL_RELIABILITY_CHECK",
+      "known_risks": [
+        "Birth input only; event truth must come from an independent source",
+        "Reliability grade must be stored per case",
+        "Timezone and daylight-saving normalization required"
+      ]
+    },
+    {
+      "source_id": "SRC-PROSPECTIVE-001",
+      "name": "TriCube Prospective Dynamic Cases",
+      "repository": "oper32767/-",
+      "domains": ["liuren", "qimen"],
+      "use": ["preregistered_real_world_eval"],
+      "initial_status": "READY_FOR_SCHEMA",
+      "known_risks": [
+        "Question wording must be frozen before interpretation",
+        "Outcome evidence must be collected after the deadline",
+        "Scoring criteria must not be broadened after the fact"
+      ]
+    }
+  ]
+}
