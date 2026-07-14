@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tricube.local/schemas/case.schema.json",
+  "title": "TriCube Validation Case",
+  "type": "object",
+  "required": [
+    "case_id",
+    "domain",
+    "source_type",
+    "input",
+    "status",
+    "evidence"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "domain": {
+      "type": "string",
+      "enum": ["bazi", "ziwei", "liuren", "qimen", "bazi_ziwei"]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["public_benchmark", "public_person", "prospective", "internal_regression"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["DISCOVERED", "AUDITING", "READY", "WARN", "BLOCK", "SEALED", "RUNNING", "SCORED", "REVIEWED", "ACCEPTED", "REJECTED"]
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "gender": {"type": ["string", "null"]},
+        "birth_datetime": {"type": ["string", "null"]},
+        "birth_place": {"type": ["string", "null"]},
+        "question": {"type": ["string", "null"]},
+        "question_datetime": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]},
+        "time_standard": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["source_refs"],
+      "properties": {
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["role", "ref"],
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": ["birth", "event", "question", "dataset_answer", "reality_result", "rule"]
+              },
+              "ref": {"type": "string", "minLength": 1},
+              "reliability": {"type": ["string", "null"]},
+              "checked_at": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sealed": {
+      "type": "object",
+      "properties": {
+        "booklet_sha256": {"type": ["string", "null"]},
+        "answer_key_sha256": {"type": ["string", "null"]},
+        "prompt_sha256": {"type": ["string", "null"]},
+        "rule_set_version": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "properties": {
+        "run_id": {"type": ["string", "null"]},
+        "model": {"type": ["string", "null"]},
+        "executor": {"type": ["string", "null"]},
+        "started_at": {"type": ["string", "null"]},
+        "raw_output_ref": {"type": ["string", "null"]},
+        "rule_ids": {"type": "array", "items": {"type": "string"}},
+        "unknown_list": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "score": {
+      "type": "object",
+      "properties": {
+        "mechanical_result": {"type": ["string", "null"], "enum": ["PASS", "WARN", "BLOCK", null]},
+        "review_result": {"type": ["string", "null"], "enum": ["PASS", "WARN", "BLOCK", null]},
+        "failure_codes": {"type": "array", "items": {"type": "string"}},
+        "reviewer": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
