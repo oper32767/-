@@ -1,0 +1,16 @@
+[project]
+name = "tricube-validation"
+version = "0.1.0"
+description = "Dataset audit and blind-eval utilities for TriCube four-arts validation"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+tricube-audit = "tricube_validation.audit:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
