@@ -1,0 +1,71 @@
+name: TriCube Validation
+
+on:
+  pull_request:
+    paths:
+      - "tricube_validation/**"
+      - ".github/workflows/tricube-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tricube_validation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Run deterministic tests
+        run: python -m unittest discover -s tests -v
+
+  audit-public-sources:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    defaults:
+      run:
+        working-directory: tricube_validation
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Fetch pinned public datasets
+        run: |
+          git clone --depth 1 https://github.com/ChenJiangxi/BaziQA.git external/BaziQA
+          git clone --depth 1 https://github.com/DestinyLinker/MingLi-Bench.git external/MingLi-Bench
+          git -C external/BaziQA rev-parse HEAD > external/BaziQA.commit
+          git -C external/MingLi-Bench rev-parse HEAD > external/MingLi-Bench.commit
+      - name: Audit BaziQA 2025 and create sealed pilot
+        run: |
+          tricube-audit \
+            --adapter baziqa \
+            --input external/BaziQA/data/contest8_2025.json \
+            --output-dir artifacts/baziqa_2025 \
+            --sample-size 10
+      - name: Audit MingLi-Bench and create sealed pilot
+        run: |
+          tricube-audit \
+            --adapter mingli \
+            --input external/MingLi-Bench/data/data.json \
+            --output-dir artifacts/mingli \
+            --sample-size 10
+      - name: Record source commits
+        run: |
+          cp external/BaziQA.commit artifacts/baziqa_2025/source_commit.txt
+          cp external/MingLi-Bench.commit artifacts/mingli/source_commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tricube-validation-audit
+          path: tricube_validation/artifacts
+          if-no-files-found: error
+          retention-days: 30
