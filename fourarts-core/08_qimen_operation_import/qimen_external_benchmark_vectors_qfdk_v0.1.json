@@ -1,0 +1,69 @@
+{
+  "benchmark_set_id": "QIMEN_EXTERNAL_BENCHMARK_QFDK_V0_1",
+  "status": "EXTERNAL_BENCHMARK_CANDIDATE_NOT_FORMAL_TRUTH",
+  "source": {
+    "repository": "qfdk/qimen",
+    "commit": "8a9734a3fcaa01adc8bffc7c4b983c00ad932868",
+    "source_path": "test/paipan.test.js",
+    "license": "MIT",
+    "attribution": "Copyright (c) 2017; MIT permission notice retained in source registry.",
+    "timezone_warning": "Source tests instantiate local Date values without an explicit timezone. Re-ground to an explicit IANA timezone before formal comparison."
+  },
+  "vectors": [
+    {
+      "vector_id": "QFDK_20260605_1652",
+      "datetime_local": "2026-06-05T16:52:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "context": "申時；芒種；來源測試標記為標準時家奇門 App 基準",
+      "expected": {
+        "dun": "YANG",
+        "ju": 6,
+        "yuan": "上元",
+        "zhifu_origin_palace": 8,
+        "zhifu_star": "天任",
+        "zhishi_door": "生門",
+        "zhishi_palace": 8,
+        "earth_plate": {"1": "壬", "2": "癸", "3": "丁", "4": "丙", "5": "乙", "6": "戊", "7": "己", "8": "庚", "9": "辛"},
+        "eight_deities": {"8": "值符", "3": "騰蛇", "4": "太陰", "9": "六合", "2": "白虎", "7": "玄武", "6": "九地", "1": "九天"},
+        "stars": {"1": "天蓬", "9": "天英", "8": "天任", "3": "天沖", "4": "天輔", "6": "天心", "7": "天柱"},
+        "doors": {"1": "休門", "8": "生門", "3": "傷門", "4": "杜門", "9": "景門", "2": "死門", "7": "驚門", "6": "開門"},
+        "hidden_stems": {"1": "丙", "2": "乙", "3": "戊", "4": "己", "5": "庚", "6": "辛", "7": "壬", "8": "癸", "9": "丁"},
+        "heaven_equals_earth": true
+      }
+    },
+    {
+      "vector_id": "QFDK_20260321_1200",
+      "datetime_local": "2026-03-21T12:00:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "expected": {"dun": "YANG", "ju": 3, "zhifu_star": "天沖", "zhifu_palace": 2, "zhishi_door": "傷門", "zhishi_palace": 9, "hidden_stems": {"1": "辛", "2": "壬", "3": "癸", "4": "丁", "5": "丙", "6": "乙", "7": "戊", "8": "己", "9": "庚"}}
+    },
+    {
+      "vector_id": "QFDK_20260609_1200",
+      "datetime_local": "2026-06-09T12:00:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "expected": {"dun": "YANG", "ju": 3, "zhifu_star": "天沖", "zhifu_palace": 2, "zhishi_door": "傷門", "zhishi_palace": 9, "hidden_stems": {"1": "辛", "2": "壬", "3": "癸", "4": "丁", "5": "丙", "6": "乙", "7": "戊", "8": "己", "9": "庚"}}
+    },
+    {
+      "vector_id": "QFDK_20260715_1200",
+      "datetime_local": "2026-07-15T12:00:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "expected": {"dun": "YIN", "ju": 5, "zhifu_star": "天輔", "zhifu_palace": 1, "zhishi_door": "杜門", "zhishi_palace": 2, "hidden_stems": {"1": "乙", "2": "丙", "3": "丁", "4": "癸", "5": "壬", "6": "辛", "7": "庚", "8": "己", "9": "戊"}}
+    },
+    {
+      "vector_id": "QFDK_20260923_1200",
+      "datetime_local": "2026-09-23T12:00:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "expected": {"dun": "YIN", "ju": 1, "zhifu_star": "天英", "zhifu_palace": 6, "zhishi_door": "景門", "zhishi_palace": 1, "hidden_stems": {"1": "壬", "2": "辛", "3": "庚", "4": "己", "5": "戊", "6": "乙", "7": "丙", "8": "丁", "9": "癸"}}
+    },
+    {
+      "vector_id": "QFDK_20261208_1200",
+      "datetime_local": "2026-12-08T12:00:00",
+      "timezone": "UNSPECIFIED_RUNTIME_LOCAL",
+      "expected": {"dun": "YIN", "ju": 7, "zhifu_star": "天輔", "zhifu_palace": 4, "zhishi_door": "杜門", "zhishi_palace": 4, "hidden_stems": {"1": "丙", "2": "丁", "3": "癸", "4": "壬", "5": "辛", "6": "庚", "7": "己", "8": "戊", "9": "乙"}}
+    }
+  ],
+  "acceptance_policy": {
+    "direct_formal_use": false,
+    "required_before_use": ["補上明確時區與地點", "以六十一串主規格重排", "至少兩個獨立引擎對照", "差異逐層定位", "雲龍或冷審裁決"]
+  }
+}
