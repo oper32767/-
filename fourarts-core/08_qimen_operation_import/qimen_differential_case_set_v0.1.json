@@ -1,0 +1,92 @@
+{
+  "case_set_id": "QIMEN_DIFFERENTIAL_CASE_SET_V0_1",
+  "status": "REPLAY_AND_BOUNDARY_CANDIDATE",
+  "description_zh_tw": "同一批時間交給多個引擎排盤，逐層找出第一個分歧；外部來源未明示時區者不得當正式答案。",
+  "default_timezone": "Asia/Taipei",
+  "cases": [
+    {
+      "case_id": "QFDK_REPLAY_20260605_1652",
+      "datetime": "2026-06-05T16:52:00+08:00",
+      "purpose": "REPLAY_EXTERNAL_VECTOR",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY",
+      "policies": [
+        {
+          "late_zi_hour_mode": "NOT_APPLICABLE",
+          "ju_method": [
+            "ZHIRUN",
+            "MAOSHAN"
+          ]
+        }
+      ],
+      "compare_through": [
+        "CALENDAR",
+        "JU",
+        "EARTH_PLATE",
+        "ZHIFU_ZHISHI",
+        "HEAVEN_PLATE",
+        "STARS",
+        "DOORS",
+        "GODS",
+        "HIDDEN_STEMS",
+        "ANOMALIES"
+      ]
+    },
+    {
+      "case_id": "QFDK_REPLAY_20260321_1200",
+      "datetime": "2026-03-21T12:00:00+08:00",
+      "purpose": "SOLAR_TERM_AND_JU_REPLAY",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY"
+    },
+    {
+      "case_id": "QFDK_REPLAY_20260609_1200",
+      "datetime": "2026-06-09T12:00:00+08:00",
+      "purpose": "SAME_TERM_DIFFERENT_DAY_REPLAY",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY"
+    },
+    {
+      "case_id": "QFDK_REPLAY_20260715_1200",
+      "datetime": "2026-07-15T12:00:00+08:00",
+      "purpose": "YIN_DUN_REPLAY",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY"
+    },
+    {
+      "case_id": "QFDK_REPLAY_20260923_1200",
+      "datetime": "2026-09-23T12:00:00+08:00",
+      "purpose": "SOLAR_TERM_BOUNDARY_DAY_REPLAY",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY",
+      "hard_requirement": "EXACT_SOLAR_TERM_TIMESTAMP_REQUIRED"
+    },
+    {
+      "case_id": "QFDK_REPLAY_20261208_1200",
+      "datetime": "2026-12-08T12:00:00+08:00",
+      "purpose": "YIN_DUN_REPLAY",
+      "source_timezone_status": "SOURCE_UNSPECIFIED_ASSUMED_ASIA_TAIPEI_FOR_REPLAY_ONLY"
+    },
+    {
+      "case_id": "BOUNDARY_LATE_ZI_20260527_2330_SAME_DAY",
+      "datetime": "2026-05-27T23:30:00+08:00",
+      "purpose": "LATE_ZI_POLICY_DIFF",
+      "policy": {
+        "late_zi_hour_mode": "SAME_DAY"
+      }
+    },
+    {
+      "case_id": "BOUNDARY_LATE_ZI_20260527_2330_NEXT_DAY",
+      "datetime": "2026-05-27T23:30:00+08:00",
+      "purpose": "LATE_ZI_POLICY_DIFF",
+      "policy": {
+        "late_zi_hour_mode": "NEXT_DAY"
+      }
+    }
+  ],
+  "required_engines": [
+    "INTERNAL_SIXTY_ONE_ROTATING",
+    "QFDK_MAOSHAN_ROTATING",
+    "MRJELLY_SNAPSHOT_ENGINE"
+  ],
+  "optional_engines": [
+    "KINQIMEN_MULTI_METHOD",
+    "TAOBI_ASTRONOMY",
+    "REDROCK_DE421"
+  ]
+}
