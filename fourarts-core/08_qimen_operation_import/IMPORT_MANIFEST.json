@@ -1,0 +1,71 @@
+{
+  "package_id": "QIMEN_OPERATION_EXTERNAL_IMPORT_V0_1",
+  "created_at": "2026-07-22",
+  "target_repository": "oper32767/-",
+  "target_branch": "qimen-operation-external-import-v0.1",
+  "status": "EXTERNAL_CANDIDATE",
+  "formal_rule_changes": false,
+  "copied_external_code": false,
+  "copied_external_rule_data": false,
+  "source_snapshots": [
+    {
+      "repository": "skyfiredao/qmenpowers",
+      "commit": "1dd16a34a9e98fa3693f54963e85111680fc6046",
+      "license": "GPL-3.0",
+      "inspected_paths": [
+        "README.md",
+        "README_zh.md",
+        "LICENSE",
+        "skills/qmen_huaqizhen/SKILL.md",
+        "skills/qmen_yishenhuanjiang/SKILL.md",
+        "skills/qmen_xunshijieyun/SKILL.md"
+      ],
+      "reuse_mode": "CONCEPT_ONLY_NO_CODE_OR_DATA_COPY"
+    },
+    {
+      "repository": "dxbuyi/qimen.skill",
+      "commit": "UNPINNED",
+      "license": "NOT_CONFIRMED",
+      "inspected_paths": [
+        "README.md"
+      ],
+      "reuse_mode": "DESIGN_CONVERGENCE_REFERENCE_ONLY"
+    }
+  ],
+  "local_files": [
+    "README.md",
+    "qimen_operation_external_candidate_map_v0.1.md",
+    "qimen_operation_candidate_contract_v0.1.json",
+    "qimen_operation_gate_candidate_v0.1.md",
+    "qimen_timing_candidate_scoring_v0.1.md",
+    "EXTERNAL_LICENSE_NOTICE.md",
+    "IMPORT_MANIFEST.json"
+  ],
+  "imported_engineering_concepts": [
+    "DETERMINISTIC_COMPUTE_SEPARATE_FROM_AI_INTERPRETATION",
+    "MODULAR_OPERATION_ROUTER",
+    "RAW_OUTPUT_BEFORE_INTERPRETATION",
+    "STRUCTURED_JSON_CONTRACT",
+    "SOURCE_BOUNDED_SYMBOL_MAPPING",
+    "CANDIDATE_TIME_ENUMERATION",
+    "HARD_STOP_BEFORE_SCORING",
+    "PROVENANCE_AND_LICENSE_TRACKING"
+  ],
+  "excluded_external_claims": [
+    "MINIMUM_HARM_COUNT_EQUALS_BEST_TIME",
+    "BIRTH_PLATE_APPLIES_TO_ALL_EVENTS",
+    "SPECIFIC_OBJECT_PLACEMENT_HAS_PROVEN_CAUSAL_EFFECT",
+    "FIXED_THREE_MONTH_EFFECT",
+    "EXTERNAL_HIGH_INTERVENTION_METHODS_AS_FORMAL_RULES",
+    "EXECUTABLE_CODE_IMPLIES_METAPHYSICAL_VALIDITY"
+  ],
+  "required_next_steps": [
+    "MAP_EACH_CANDIDATE_TO_SIXTY_ONE_THREAD_SOURCE",
+    "DEFINE_INTERNAL_OPERATION_INPUT_FIELDS",
+    "DEFINE_PLATECHECK_PASS_CRITERIA",
+    "DEFINE_HOST_GUEST_AND_YONGSHEN_MINIMUMS",
+    "RUN_HISTORICAL_REPLAY",
+    "RUN_ANSWER_ISOLATED_BLIND_TEST",
+    "HUMAN_AND_COLD_REVIEW_ADJUDICATION"
+  ]
+}
