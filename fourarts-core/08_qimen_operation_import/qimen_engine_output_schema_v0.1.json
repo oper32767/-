@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "QIMEN_NORMALIZED_ENGINE_OUTPUT_V0_1",
+  "title": "奇門多引擎標準輸出",
+  "description": "供差分工具比較不同排盤引擎；不裁決哪一個術數口徑正確。",
+  "type": "object",
+  "required": [
+    "case_id",
+    "engine",
+    "policy",
+    "calendar",
+    "ju",
+    "plate",
+    "anomalies"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "object",
+      "required": [
+        "adapter_id",
+        "version"
+      ],
+      "properties": {
+        "adapter_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "source_commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "timezone",
+        "late_zi_hour_mode",
+        "day_boundary",
+        "plate_style",
+        "ju_method",
+        "tianqin_lodging",
+        "hidden_stem_method"
+      ],
+      "properties": {
+        "timezone": {
+          "type": "string"
+        },
+        "true_solar_time_policy": {
+          "type": "string"
+        },
+        "late_zi_hour_mode": {
+          "type": "string"
+        },
+        "day_boundary": {
+          "type": "string"
+        },
+        "plate_style": {
+          "type": "string"
+        },
+        "ju_method": {
+          "type": "string"
+        },
+        "yuan_method": {
+          "type": "string"
+        },
+        "tianqin_lodging": {
+          "type": "string"
+        },
+        "hidden_stem_method": {
+          "type": "string"
+        }
+      }
+    },
+    "calendar": {
+      "type": "object",
+      "required": [
+        "datetime",
+        "solar_term",
+        "four_pillars"
+      ],
+      "properties": {
+        "datetime": {
+          "type": "string"
+        },
+        "solar_term": {
+          "type": "string"
+        },
+        "solar_term_exact_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "four_pillars": {
+          "type": "object",
+          "required": [
+            "year",
+            "month",
+            "day",
+            "hour"
+          ],
+          "properties": {
+            "year": {
+              "type": "string"
+            },
+            "month": {
+              "type": "string"
+            },
+            "day": {
+              "type": "string"
+            },
+            "hour": {
+              "type": "string"
+            }
+          }
+        },
+        "xun_head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "void_branches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ju": {
+      "type": "object",
+      "required": [
+        "dun",
+        "number",
+        "yuan",
+        "zhifu_star",
+        "zhishi_door"
+      ],
+      "properties": {
+        "dun": {
+          "enum": [
+            "YANG",
+            "YIN"
+          ]
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9
+        },
+        "yuan": {
+          "enum": [
+            "UPPER",
+            "MIDDLE",
+            "LOWER"
+          ]
+        },
+        "zhifu_star": {
+          "type": "string"
+        },
+        "zhifu_palace": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "zhishi_door": {
+          "type": "string"
+        },
+        "zhishi_palace": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "plate": {
+      "type": "object",
+      "required": [
+        "earth_stems",
+        "heaven_stems",
+        "stars",
+        "doors",
+        "gods"
+      ],
+      "properties": {
+        "earth_stems": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "heaven_stems": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "stars": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "doors": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "gods": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "hidden_stems": {
+          "$ref": "#/$defs/palaceMap"
+        },
+        "void_palaces": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "horse": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "palace",
+          "basis"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "subtype": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "palace": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "basis": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "raw_output_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes_zh_tw": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "palaceMap": {
+      "type": "object",
+      "patternProperties": {
+        "^[1-9]$": {
+          "type": [
+            "string",
+            "array",
+            "object",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
