@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "QIMEN_CALENDAR_SNAPSHOT_SCHEMA_V0_1",
+  "title": "奇門排盤標準化曆法快照",
+  "type": "object",
+  "required": ["snapshot_id", "input", "time_policy", "calendar_state", "qimen_method", "provenance"],
+  "properties": {
+    "snapshot_id": {"type": "string"},
+    "input": {
+      "type": "object",
+      "required": ["datetime_rfc3339", "timezone"],
+      "properties": {
+        "datetime_rfc3339": {"type": "string"},
+        "timezone": {"type": "string"},
+        "location_name": {"type": ["string", "null"]},
+        "longitude": {"type": ["number", "null"]},
+        "latitude": {"type": ["number", "null"]}
+      }
+    },
+    "time_policy": {
+      "type": "object",
+      "required": ["civil_or_true_solar", "late_zi_hour_mode", "day_boundary", "solar_term_boundary_precision"],
+      "properties": {
+        "civil_or_true_solar": {"enum": ["CIVIL_TIME", "TRUE_SOLAR_TIME", "BOTH_RECORDED"]},
+        "true_solar_datetime_rfc3339": {"type": ["string", "null"]},
+        "late_zi_hour_mode": {"enum": ["SAME_DAY", "NEXT_DAY", "NOT_APPLICABLE", "UNDECLARED"]},
+        "day_boundary": {"type": "string"},
+        "solar_term_boundary_precision": {"enum": ["SECOND", "MINUTE", "HOUR", "DAY", "UNKNOWN"]}
+      }
+    },
+    "calendar_state": {
+      "type": "object",
+      "required": ["julian_day", "solar_term", "four_pillars", "hour_table_13"],
+      "properties": {
+        "julian_day": {"type": ["number", "null"]},
+        "delta_t_seconds": {"type": ["number", "null"]},
+        "solar_term": {
+          "type": "object",
+          "required": ["name", "boundary_rfc3339", "distance_seconds"],
+          "properties": {
+            "name": {"type": "string"},
+            "boundary_rfc3339": {"type": ["string", "null"]},
+            "distance_seconds": {"type": ["number", "null"]},
+            "previous_term": {"type": ["string", "null"]},
+            "next_term": {"type": ["string", "null"]}
+          }
+        },
+        "solstice_julian_days": {
+          "type": "object",
+          "properties": {
+            "previous_winter": {"type": ["number", "null"]},
+            "current_summer": {"type": ["number", "null"]},
+            "next_winter": {"type": ["number", "null"]}
+          }
+        },
+        "four_pillars": {
+          "type": "object",
+          "required": ["year", "month", "day", "hour"],
+          "properties": {
+            "year": {"type": "string"},
+            "month": {"type": "string"},
+            "day": {"type": "string"},
+            "hour": {"type": "string"}
+          }
+        },
+        "xun": {
+          "type": "object",
+          "properties": {
+            "year": {"type": ["string", "null"]},
+            "month": {"type": ["string", "null"]},
+            "day": {"type": ["string", "null"]},
+            "hour": {"type": ["string", "null"]}
+          }
+        },
+        "hour_table_13": {"type": "array", "minItems": 13, "maxItems": 13}
+      }
+    },
+    "qimen_method": {
+      "type": "object",
+      "required": ["chart_layer", "plate_style", "ju_method", "tianqin_lodging", "hidden_stem_method"],
+      "properties": {
+        "chart_layer": {"enum": ["HOUR", "MINUTE", "DAY", "MONTH", "YEAR"]},
+        "plate_style": {"enum": ["ROTATING", "FLYING", "MINGFA", "OTHER"]},
+        "ju_method": {"enum": ["CHAIBU", "ZHIRUN", "MAOSHAN", "CUSTOM", "OTHER"]},
+        "yuan_method": {"type": "string"},
+        "tianqin_lodging": {"enum": ["JIKUN2", "FOLLOW_TIANRUI", "FOLLOW_ZHIFU", "OTHER", "UNDECLARED"]},
+        "hidden_stem_method": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["engine", "engine_version", "source_commit", "snapshot_hash"],
+      "properties": {
+        "engine": {"type": "string"},
+        "engine_version": {"type": "string"},
+        "source_commit": {"type": "string"},
+        "astronomy_source": {"type": ["string", "null"]},
+        "snapshot_hash": {"type": "string"},
+        "warnings": {"type": "array"}
+      }
+    }
+  },
+  "allOf": [
+    {"not": {"properties": {"time_policy": {"properties": {"late_zi_hour_mode": {"const": "UNDECLARED"}}}}}},
+    {"not": {"properties": {"qimen_method": {"properties": {"tianqin_lodging": {"const": "UNDECLARED"}}}}}}
+  ]
+}
