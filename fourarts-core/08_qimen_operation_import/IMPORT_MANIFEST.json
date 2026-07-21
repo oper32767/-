@@ -7,6 +7,33 @@
   "formal_rule_changes": false,
   "copied_external_code": false,
   "copied_external_rule_data": false,
+  "source_lineage_correction": {
+    "confirmed_by": "YUNLONG_USER_ADJUDICATION",
+    "yinpan_common_four_harms": [
+      "JIXING",
+      "RUMU",
+      "MENPO",
+      "KONGWANG"
+    ],
+    "xunshuang_six_harms": [
+      "JIXING",
+      "RUMU",
+      "MENPO",
+      "KONGWANG",
+      "BAIHU",
+      "GENG"
+    ],
+    "xunshuang_content_scope": [
+      "SIX_HARMS",
+      "HUAQIZHEN",
+      "MIEXIANG",
+      "BUZHEN"
+    ],
+    "sixty_one_threads_role": "YUNLONG_DERIVED_RAW_SOURCE_WITH_SELF_STUDY_PRACTICE_CORRECTION_AND_GOVERNANCE",
+    "qmenpowers_huaqizhen_role": "SAME_UPSTREAM_LINEAGE_INDEPENDENT_ENGINEERING_IMPLEMENTATION",
+    "qmenpowers_is_independent_metaphysical_evidence": false,
+    "xunshijieyun_yixinghuandou_lineage": "YINPAN_QIMEN_HIGH_CONFIDENCE_EXACT_SOURCE_UNPINNED"
+  },
   "source_snapshots": [
     {
       "repository": "skyfiredao/qmenpowers",
@@ -20,7 +47,9 @@
         "skills/qmen_yishenhuanjiang/SKILL.md",
         "skills/qmen_xunshijieyun/SKILL.md"
       ],
-      "reuse_mode": "CONCEPT_ONLY_NO_CODE_OR_DATA_COPY"
+      "reuse_mode": "CONCEPT_ONLY_NO_CODE_OR_DATA_COPY",
+      "lineage_role": "SAME_UPSTREAM_LINEAGE_CONFIRMED_FOR_SIX_HARMS_AND_HUAQIZHEN",
+      "evidence_role": "ENGINEERING_REFERENCE_NOT_INDEPENDENT_METAPHYSICAL_VALIDATION"
     },
     {
       "repository": "dxbuyi/qimen.skill",
@@ -49,17 +78,23 @@
     "SOURCE_BOUNDED_SYMBOL_MAPPING",
     "CANDIDATE_TIME_ENUMERATION",
     "HARD_STOP_BEFORE_SCORING",
-    "PROVENANCE_AND_LICENSE_TRACKING"
+    "PROVENANCE_LICENSE_AND_UPSTREAM_LINEAGE_TRACKING",
+    "ANOMALY_TAXONOMY_DECLARATION"
   ],
   "excluded_external_claims": [
-    "MINIMUM_HARM_COUNT_EQUALS_BEST_TIME",
+    "MINIMUM_XUNSHUANG_SIX_HARM_COUNT_EQUALS_BEST_TIME",
     "BIRTH_PLATE_APPLIES_TO_ALL_EVENTS",
     "SPECIFIC_OBJECT_PLACEMENT_HAS_PROVEN_CAUSAL_EFFECT",
     "FIXED_THREE_MONTH_EFFECT",
     "EXTERNAL_HIGH_INTERVENTION_METHODS_AS_FORMAL_RULES",
-    "EXECUTABLE_CODE_IMPLIES_METAPHYSICAL_VALIDITY"
+    "EXECUTABLE_CODE_IMPLIES_METAPHYSICAL_VALIDITY",
+    "SAME_UPSTREAM_DERIVATIVES_COUNT_AS_INDEPENDENT_EVIDENCE",
+    "XUNSHUANG_SIX_HARMS_ARE_UNIVERSAL_YINPAN_CONSENSUS"
   ],
   "required_next_steps": [
+    "MAP_FOUR_HARMS_AND_XUNSHUANG_SIX_HARMS_TO_SIXTY_ONE_THREAD_LINES",
+    "PIN_XUNSHUANG_VIDEO_REFERENCES",
+    "PIN_YINPAN_XUNSHIJIEYUN_AND_YIXINGHUANDOU_VIDEO_REFERENCES",
     "MAP_EACH_CANDIDATE_TO_SIXTY_ONE_THREAD_SOURCE",
     "DEFINE_INTERNAL_OPERATION_INPUT_FIELDS",
     "DEFINE_PLATECHECK_PASS_CRITERIA",
