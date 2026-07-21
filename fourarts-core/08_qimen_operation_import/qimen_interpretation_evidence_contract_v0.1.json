@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "QIMEN_INTERPRETATION_EVIDENCE_CONTRACT_V0_1",
+  "title": "奇門解盤規則證據契約",
+  "type": "object",
+  "required": ["candidate_rule_id", "layer", "conditions", "outputs", "source", "lineage", "safety", "status"],
+  "properties": {
+    "candidate_rule_id": {"type": "string"},
+    "layer": {"enum": ["PLATE", "WHOLE_CHART", "PALACE", "YONGSHEN", "HOST_GUEST", "TIMING", "DIRECTION", "OPERATION"]},
+    "conditions": {
+      "type": "object",
+      "required": ["ast"],
+      "properties": {
+        "ast": {"type": "object"},
+        "required_fields": {"type": "array"},
+        "exceptions": {"type": "array"},
+        "conflict_priority": {"type": ["integer", "null"]}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["verdict_class", "explanation_template"],
+      "properties": {
+        "verdict_class": {"enum": ["STRUCTURAL_FACT", "SUPPORT", "WARNING", "BLOCKER", "CANDIDATE_ACTION"]},
+        "explanation_template": {"type": "string"},
+        "allowed_specificity": {"enum": ["STRUCTURE_ONLY", "TOPIC_LEVEL", "EVENT_LEVEL", "ACTION_LEVEL"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["source_class", "locator"],
+      "properties": {
+        "source_class": {"enum": ["SIXTY_ONE_VERIFIED", "SIXTY_ONE_EXTRACTED", "CLASSICAL_PUBLIC_DOMAIN", "EXTERNAL_CODE_TEST", "EXTERNAL_UNVERIFIED", "MODEL_GENERATED"]},
+        "title": {"type": "string"},
+        "locator": {"type": "string"},
+        "quote_hash": {"type": ["string", "null"]},
+        "license": {"type": ["string", "null"]}
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "required": ["upstream_id", "independent_evidence"],
+      "properties": {
+        "upstream_id": {"type": "string"},
+        "independent_evidence": {"type": "boolean"},
+        "duplicate_vote_group": {"type": ["string", "null"]}
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["risk_level", "prohibited_uses"],
+      "properties": {
+        "risk_level": {"enum": ["LOW", "MEDIUM", "HIGH", "PROHIBITED"]},
+        "prohibited_uses": {"type": "array"},
+        "rollback_required": {"type": "boolean"}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "unit_tests": {"type": "array"},
+        "historical_cases": {"type": "array"},
+        "blind_test_status": {"enum": ["NOT_RUN", "PASS", "FAIL", "MIXED"]}
+      }
+    },
+    "status": {"enum": ["RAW_SOURCE", "EXTERNAL_CANDIDATE", "EXTRACTED_RULE", "VERIFIED_RULE", "REJECTED"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"source": {"properties": {"source_class": {"const": "MODEL_GENERATED"}}}}},
+      "then": {"properties": {"status": {"enum": ["RAW_SOURCE", "EXTERNAL_CANDIDATE", "REJECTED"]}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "VERIFIED_RULE"}}},
+      "then": {"properties": {"validation": {"required": ["blind_test_status"], "properties": {"blind_test_status": {"const": "PASS"}}}}}
+    }
+  ]
+}
