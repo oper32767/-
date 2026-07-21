@@ -1,0 +1,71 @@
+{
+  "registry_id": "QIMEN_METHOD_ADAPTER_REGISTRY_V0_1",
+  "status": "CANDIDATE",
+  "required_declarations": [
+    "chart_layer", "plate_style", "ju_method", "yuan_method", "late_zi_hour_mode",
+    "day_boundary", "solar_term_source", "solar_term_precision", "tianqin_lodging",
+    "hidden_stem_method", "void_method", "horse_method"
+  ],
+  "hard_stop": "ANY_REQUIRED_DECLARATION_MISSING",
+  "adapters": [
+    {
+      "adapter_id": "INTERNAL_SIXTY_ONE_ROTATING",
+      "role": "PRIMARY_INTERNAL_CANDIDATE",
+      "chart_layer": "HOUR",
+      "plate_style": "ROTATING",
+      "ju_method": "TO_BE_MAPPED_FROM_SIXTY_ONE",
+      "status": "HOLD_UNTIL_SOURCE_MAPPING"
+    },
+    {
+      "adapter_id": "QFDK_MAOSHAN_ROTATING",
+      "role": "EXTERNAL_DIFF_ENGINE",
+      "source": "qfdk/qimen@8a9734a3fcaa01adc8bffc7c4b983c00ad932868",
+      "chart_layer": "HOUR",
+      "plate_style": "ROTATING",
+      "ju_method": "MAOSHAN",
+      "license": "MIT",
+      "status": "BENCHMARK_CANDIDATE"
+    },
+    {
+      "adapter_id": "MRJELLY_SNAPSHOT_ENGINE",
+      "role": "CALENDAR_ADAPTER_REFERENCE",
+      "source": "MrJelly/QiMenDunJia@bc39883e39311208586697e3e60138b1590429a6",
+      "chart_layer": "HOUR",
+      "plate_style": "ROTATING",
+      "ju_method": "CONFIGURABLE",
+      "late_zi_hour_mode": ["SAME_DAY", "NEXT_DAY"],
+      "license": "MIT",
+      "status": "BOUNDARY_TEST_CANDIDATE"
+    },
+    {
+      "adapter_id": "TAOBI_ASTRONOMY",
+      "role": "SOLAR_TERM_DIFF_ORACLE",
+      "source": "Taogram/taobi@0be843be2190b5525d4591f843062a40dfc8b37b",
+      "plate_style": "ROTATING",
+      "ju_method": ["CHAIBU", "MAOSHAN", "CUSTOM_EQUAL_DIVISION"],
+      "solar_term_source": "VSOP87D_WITH_NUTATION_AND_DELTA_T_OPTIONS",
+      "license": "MPL-2.0",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "adapter_id": "KINQIMEN_MULTI_METHOD",
+      "role": "SECONDARY_DIFF_ENGINE",
+      "source": "kentang2017/kinqimen@f4c6118665253f897889290d8630f9b4cb3a4404",
+      "chart_layer": ["HOUR", "MINUTE", "DAY"],
+      "plate_style": "ROTATING",
+      "ju_method": ["CHAIBU", "ZHIRUN"],
+      "license": "MIT",
+      "status": "CANDIDATE_NO_TESTS_FOUND"
+    },
+    {
+      "adapter_id": "REDROCK_DE421",
+      "role": "EPHEMERIS_DIFF_ORACLE",
+      "source": "redrockhorse/qimenpaipan@b6de54245cf7a514f59e51833dc01a87e1a3a849",
+      "chart_layer": "HOUR",
+      "ju_method": "ZHIRUN",
+      "solar_term_source": "JPL_DE421",
+      "license": "MIT",
+      "status": "HOLD_RECENT_BUG_FIXES"
+    }
+  ]
+}
