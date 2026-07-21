@@ -1,0 +1,102 @@
+{
+  "schema_id": "QM_OPERATION_CANDIDATE_CONTRACT_V0_1",
+  "status": "EXTERNAL_CANDIDATE_NOT_FORMAL_RULE",
+  "description_zh_tw": "奇門運籌候選輸入、證據、輸出與停機契約",
+  "required_input": {
+    "question": "string",
+    "question_type": "string",
+    "actor": {
+      "self": "string",
+      "counterparty": "string_or_null",
+      "target": "string"
+    },
+    "event_time": "RFC3339_datetime",
+    "timezone": "IANA_timezone",
+    "location": {
+      "name": "string",
+      "longitude": "number_or_null",
+      "latitude": "number_or_null"
+    },
+    "operation_goal": [
+      "AVOID",
+      "TIMING",
+      "DIRECTION",
+      "SEQUENCE",
+      "ACTION_STRATEGY",
+      "HIGH_INTERVENTION_CANDIDATE"
+    ]
+  },
+  "plate_context": {
+    "method": "ZHIRUN_OR_CHAIBU_OR_OTHER",
+    "plate_type": "ROTATING_OR_FLYING_OR_OTHER",
+    "true_solar_time_policy": "string",
+    "engine_version": "string",
+    "rule_version": "string",
+    "plate_hash": "sha256",
+    "platecheck_status": "PASS_OR_HOLD_OR_FAIL",
+    "platecheck_report_ref": "string"
+  },
+  "interpretation_context": {
+    "self_palace": "string_or_null",
+    "counterparty_palace": "string_or_null",
+    "yongshen": "string_or_null",
+    "zhifu": "string_or_null",
+    "zhishi": "string_or_null",
+    "host_guest_judgment": "string_or_null",
+    "hard_anomalies": [],
+    "source_refs": []
+  },
+  "candidate_action": {
+    "candidate_id": "string",
+    "action_type": "TIME_OR_DIRECTION_OR_SEQUENCE_OR_AVOID_OR_LAYOUT_CANDIDATE",
+    "action_text": "string",
+    "source_class": "SIXTY_ONE_VERIFIED_OR_SIXTY_ONE_EXTRACTED_OR_EXTERNAL_ENGINEERING_OR_EXTERNAL_UNVERIFIED",
+    "source_refs": [],
+    "supporting_signals": [],
+    "contradicting_signals": [],
+    "hard_blockers": [],
+    "reality_constraints": [],
+    "risk_level": "LOW_OR_MEDIUM_OR_HIGH_OR_PROHIBITED",
+    "reversibility": "REVERSIBLE_OR_PARTIAL_OR_IRREVERSIBLE",
+    "rollback_plan": "string_or_null",
+    "validation_plan": "string",
+    "candidate_score": "number_or_null",
+    "score_breakdown": {},
+    "confidence": "number_0_to_1"
+  },
+  "verdict": {
+    "status": "PASS_OR_HOLD_OR_FAIL",
+    "reason_codes": [],
+    "selected_candidate_ids": [],
+    "rejected_candidate_ids": [],
+    "human_final_decision": "PENDING_OR_APPROVED_OR_REJECTED"
+  },
+  "hard_stop_conditions": [
+    "MISSING_REQUIRED_INPUT",
+    "PLATECHECK_NOT_PASS",
+    "QUESTION_TYPE_UNLOCKED",
+    "SELF_OR_YONGSHEN_UNRESOLVED",
+    "HOST_GUEST_UNRESOLVED",
+    "SOURCE_CONFLICT_UNRESOLVED",
+    "UNTRACEABLE_SYMBOL_MAPPING",
+    "HIGH_RISK_WITHOUT_ROLLBACK",
+    "REALITY_CONSTRAINT_BLOCKED"
+  ],
+  "provenance": {
+    "created_at": "2026-07-22",
+    "external_reference_repositories": [
+      {
+        "repository": "skyfiredao/qmenpowers",
+        "commit": "1dd16a34a9e98fa3693f54963e85111680fc6046",
+        "license": "GPL-3.0",
+        "reuse_mode": "CONCEPT_ONLY_NO_CODE_OR_DATA_COPY"
+      },
+      {
+        "repository": "dxbuyi/qimen.skill",
+        "commit": "UNPINNED",
+        "license": "NOT_CONFIRMED",
+        "reuse_mode": "DESIGN_CONVERGENCE_REFERENCE_ONLY"
+      }
+    ]
+  }
+}
