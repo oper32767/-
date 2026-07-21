@@ -1,7 +1,7 @@
 {
-  "registry_id": "QIMEN_METHOD_ADAPTER_REGISTRY_V0_2",
-  "status": "CANDIDATE_WITH_INTERNAL_MAINLINE_MAPPED",
-  "description_zh_tw": "登記內部六十一串主鏈與外部排盤引擎的口徑；任何必要口徑缺失時停止比較。",
+  "registry_id": "QIMEN_METHOD_ADAPTER_REGISTRY_V0_3",
+  "status": "EXTERNAL_DIFF_ADAPTER_REGISTRY",
+  "description_zh_tw": "只登記外部排盤引擎的公開方法口徑，供差分測試；不包含六十一串內部主鏈裁決。",
   "required_declarations": [
     "chart_layer",
     "plate_style",
@@ -20,38 +20,6 @@
   "hard_stop": "ANY_REQUIRED_DECLARATION_MISSING",
   "adapters": [
     {
-      "adapter_id": "INTERNAL_SIXTY_ONE_ROTATING",
-      "role": "PRIMARY_INTERNAL_RULE_PROFILE",
-      "source_profile": "qimen_internal_mainline_profile_v0.1.json",
-      "chart_layer": "HOUR",
-      "plate_style": "ROTATING",
-      "ju_method": "ZHIRUN",
-      "yuan_method": "FU_HEAD_SUPERSPIRIT_RECEIVING_QI_AND_INTERCALATION",
-      "late_zi_hour_mode": "MUST_DECLARE_PER_CASE",
-      "day_boundary": "MUST_DECLARE_PER_CASE",
-      "solar_term_source": "EXACT_EPHEMERIS_ADAPTER_REQUIRED",
-      "solar_term_precision": "EXACT_TIMESTAMP_NEAR_BOUNDARY",
-      "tianqin_lodging": "KUN_2_STAR_AND_STEM_SYNCHRONIZED",
-      "hidden_stem_method": "MUST_DECLARE_ONE_OF_INTERNAL_FOUR_METHOD_BRANCHES",
-      "void_method": "XUN_VOID_FROM_SIXTY_JIAZI",
-      "horse_method": "POST_HORSE_FROM_THREE_HARMONIES",
-      "orientation": "SOUTH_TOP_NORTH_BOTTOM",
-      "terminology": "ROTATE_FORWARD_REVERSE_TRANSFER_ONLY",
-      "status": "MAPPED_WITH_HIDDEN_STEM_AND_LATE_ZI_UNKNOWNS",
-      "hard_stops": [
-        "LATE_ZI_POLICY_UNDECLARED_WHEN_APPLICABLE",
-        "HIDDEN_STEM_METHOD_UNDECLARED",
-        "TIANQIN_LODGING_INCOMPLETE",
-        "ANOMALY_SUMMARY_MISSING",
-        "PLATE_SELF_CHECK_FAILED"
-      ],
-      "source_refs": [
-        "ChatGPT-v2.6 施工啟動包  伊東  3月28接29日.md:L447-L484",
-        "ChatGPT-有效資產追回與封存  伊東  4月13日.md:L22-L140;L504-L560",
-        "GPT的記憶(4).txt:L316-L331;L344-L345"
-      ]
-    },
-    {
       "adapter_id": "QFDK_MAOSHAN_ROTATING",
       "role": "EXTERNAL_DIFF_ENGINE",
       "source": "qfdk/qimen@8a9734a3fcaa01adc8bffc7c4b983c00ad932868",
@@ -67,9 +35,9 @@
       "hidden_stem_method": "ENGINE_DEFINED",
       "void_method": "ENGINE_DEFINED",
       "horse_method": "ENGINE_DEFINED",
-      "orientation": "NOT_RELEVANT_TO_DATA_OUTPUT",
+      "orientation": "DATA_ONLY",
       "license": "MIT",
-      "status": "BENCHMARK_CANDIDATE_POLICY_GAPS"
+      "status": "REFERENCE_WITH_POLICY_GAPS"
     },
     {
       "adapter_id": "MRJELLY_SNAPSHOT_ENGINE",
@@ -79,16 +47,9 @@
       "plate_style": "ROTATING",
       "ju_method": "CONFIGURABLE",
       "yuan_method": "CONFIGURABLE",
-      "late_zi_hour_mode": [
-        "SAME_DAY",
-        "NEXT_DAY"
-      ],
+      "late_zi_hour_mode": ["SAME_DAY", "NEXT_DAY"],
       "day_boundary": "CONFIGURABLE_BY_LATE_ZI_POLICY",
-      "solar_term_source": [
-        "LIGHTWEIGHT_SOLAR_POSITION",
-        "SHOUXING_ASTRONOMICAL_CALENDAR",
-        "TYME4TS"
-      ],
+      "solar_term_source": ["LIGHTWEIGHT_SOLAR_POSITION", "SHOUXING_ASTRONOMICAL_CALENDAR", "TYME4TS"],
       "solar_term_precision": "ADAPTER_DEPENDENT",
       "tianqin_lodging": "ENGINE_DEFINED",
       "hidden_stem_method": "ENGINE_DEFINED",
@@ -104,11 +65,7 @@
       "source": "Taogram/taobi@0be843be2190b5525d4591f843062a40dfc8b37b",
       "chart_layer": "HOUR",
       "plate_style": "ROTATING",
-      "ju_method": [
-        "CHAIBU",
-        "MAOSHAN",
-        "CUSTOM_EQUAL_DIVISION"
-      ],
+      "ju_method": ["CHAIBU", "MAOSHAN", "CUSTOM_EQUAL_DIVISION"],
       "yuan_method": "CONFIGURABLE",
       "late_zi_hour_mode": "NOT_CONFIRMED",
       "day_boundary": "ENGINE_DEFINED",
@@ -126,16 +83,9 @@
       "adapter_id": "KINQIMEN_MULTI_METHOD",
       "role": "SECONDARY_DIFF_ENGINE",
       "source": "kentang2017/kinqimen@f4c6118665253f897889290d8630f9b4cb3a4404",
-      "chart_layer": [
-        "HOUR",
-        "MINUTE",
-        "DAY"
-      ],
+      "chart_layer": ["HOUR", "MINUTE", "DAY"],
       "plate_style": "ROTATING",
-      "ju_method": [
-        "CHAIBU",
-        "ZHIRUN"
-      ],
+      "ju_method": ["CHAIBU", "ZHIRUN"],
       "yuan_method": "ENGINE_DEFINED",
       "late_zi_hour_mode": "NOT_CONFIRMED",
       "day_boundary": "ENGINE_DEFINED",
