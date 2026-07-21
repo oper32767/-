@@ -1,4 +1,4 @@
-name: 奇門候選包自動檢查
+name: 奇門差分與來源治理檢查
 
 on:
   pull_request:
@@ -7,7 +7,8 @@ on:
       - ".github/workflows/qimen-import-check.yml"
   push:
     branches:
-      - "qimen-operation-external-import-v0.1"
+      - "main"
+      - "qimen-*"
     paths:
       - "fourarts-core/08_qimen_operation_import/**"
       - ".github/workflows/qimen-import-check.yml"
@@ -25,7 +26,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 驗證候選包結構
+      - name: 驗證工程底盤結構
         working-directory: fourarts-core/08_qimen_operation_import
         run: python3 tools/validate_qimen_import_package.py
 
