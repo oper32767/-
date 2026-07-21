@@ -1,0 +1,35 @@
+name: 奇門差分與來源治理檢查
+
+on:
+  pull_request:
+    paths:
+      - "fourarts-core/08_qimen_operation_import/**"
+      - ".github/workflows/qimen-import-check.yml"
+  push:
+    branches:
+      - "main"
+      - "qimen-*"
+    paths:
+      - "fourarts-core/08_qimen_operation_import/**"
+      - ".github/workflows/qimen-import-check.yml"
+
+jobs:
+  qimen-import-check:
+    name: 奇門結構與差分工具檢查
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取出倉庫內容
+        uses: actions/checkout@v4
+
+      - name: 設定 Python（程式語言）
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 驗證工程底盤結構
+        working-directory: fourarts-core/08_qimen_operation_import
+        run: python3 tools/validate_qimen_import_package.py
+
+      - name: 執行差分工具單元測試
+        working-directory: fourarts-core/08_qimen_operation_import
+        run: python3 -m unittest discover -s tests -p "test_*.py" -v

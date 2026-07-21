@@ -1,0 +1,54 @@
+{
+  "package_id": "QIMEN_ENGINEERING_DIFF_BASELINE_V0_1",
+  "created_at": "2026-07-22",
+  "target_repository": "oper32767/-",
+  "target_branch": "qimen-engineering-safe-merge-v0.1",
+  "status": "ENGINEERING_BASELINE",
+  "formal_rule_changes": false,
+  "copied_external_code": false,
+  "copied_external_rule_data": false,
+  "local_files": [
+    "README.md",
+    "qimen_calendar_snapshot_schema_v0.1.json",
+    "qimen_classical_source_map_v0.1.md",
+    "qimen_differential_case_set_v0.1.json",
+    "qimen_engine_output_schema_v0.1.json",
+    "qimen_external_source_registry_v0.2.json",
+    "qimen_import_decision_log_v0.2.md",
+    "qimen_interpretation_evidence_contract_v0.1.json",
+    "qimen_mainline_integration_and_diff_guide_v0.1.md",
+    "qimen_method_adapter_registry_v0.1.json",
+    "qimen_plate_differential_harness_spec_v0.1.md",
+    "tools/qimen_diff_harness.py",
+    "tools/validate_qimen_import_package.py",
+    "tests/test_qimen_diff_harness.py",
+    "EXTERNAL_LICENSE_NOTICE.md",
+    "IMPORT_MANIFEST.json",
+    ".github/workflows/qimen-import-check.yml"
+  ],
+  "excluded_candidate_files": [
+    "qimen_internal_mainline_profile_v0.1.json",
+    "qimen_external_benchmark_vectors_qfdk_v0.1.json",
+    "qimen_operation_candidate_contract_v0.1.json",
+    "qimen_operation_external_candidate_map_v0.1.md",
+    "qimen_operation_gate_candidate_v0.1.md",
+    "qimen_timing_candidate_scoring_v0.1.md"
+  ],
+  "imported_engineering_concepts": [
+    "NORMALIZED_CALENDAR_SNAPSHOT",
+    "EXTERNAL_METHOD_ADAPTER_REGISTRY",
+    "NORMALIZED_MULTI_ENGINE_OUTPUT",
+    "LAYERED_DIFFERENTIAL_HARNESS",
+    "FIRST_DIVERGENCE_REPORTING",
+    "INTERPRETATION_EVIDENCE_CONTRACT",
+    "PROVENANCE_LICENSE_AND_LINEAGE_TRACKING",
+    "AUTOMATED_STRUCTURE_AND_UNIT_TESTS"
+  ],
+  "hard_limits": [
+    "NO_FORMAL_RULE_PROMOTION",
+    "NO_EXTERNAL_ENGINE_AS_TRUTH_SOURCE",
+    "NO_SAME_LINEAGE_DOUBLE_COUNTING",
+    "NO_HIGH_INTERVENTION_OPERATION",
+    "NO_UNLICENSED_CODE_COPY"
+  ]
+}
