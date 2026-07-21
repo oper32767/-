@@ -1,168 +1,54 @@
 {
-  "package_id": "QIMEN_PLATE_INTERPRETATION_OPERATION_IMPORT_V0_3",
+  "package_id": "QIMEN_ENGINEERING_DIFF_BASELINE_V0_1",
   "created_at": "2026-07-22",
   "target_repository": "oper32767/-",
-  "target_branch": "qimen-operation-external-import-v0.1",
-  "status": "EXTERNAL_CANDIDATE_WITH_INTERNAL_MAINLINE_MAPPING",
+  "target_branch": "qimen-engineering-safe-merge-v0.1",
+  "status": "ENGINEERING_BASELINE",
   "formal_rule_changes": false,
   "copied_external_code": false,
   "copied_external_rule_data": false,
-  "source_lineage_correction": {
-    "confirmed_by": "YUNLONG_USER_ADJUDICATION",
-    "yinpan_common_four_harms": ["JIXING", "RUMU", "MENPO", "KONGWANG"],
-    "xunshuang_six_harms": ["JIXING", "RUMU", "MENPO", "KONGWANG", "BAIHU", "GENG"],
-    "xunshuang_content_scope": ["SIX_HARMS", "HUAQIZHEN", "MIEXIANG", "BUZHEN"],
-    "sixty_one_threads_role": "YUNLONG_DERIVED_RAW_SOURCE_WITH_SELF_STUDY_PRACTICE_CORRECTION_AND_GOVERNANCE",
-    "qmenpowers_huaqizhen_role": "SAME_UPSTREAM_LINEAGE_INDEPENDENT_ENGINEERING_IMPLEMENTATION",
-    "qmenpowers_is_independent_metaphysical_evidence": false,
-    "xunshijieyun_yixinghuandou_lineage": "YINPAN_QIMEN_HIGH_CONFIDENCE_EXACT_SOURCE_UNPINNED"
-  },
-  "internal_mainline_mapping": {
-    "profile": "qimen_internal_mainline_profile_v0.1.json",
-    "source_scope": "SIXTY_ONE_THREAD_QIMEN_SEALED_RULES",
-    "mapped": [
-      "HOUR_ROTATING_ZHIRUN_MAINLINE",
-      "SOUTH_TOP_NORTH_BOTTOM",
-      "REBUILD_FROM_ZERO",
-      "TIANQIN_KUN_2_STAR_STEM_SYNCHRONIZATION",
-      "ANOMALY_SUMMARY_BEFORE_INTERPRETATION",
-      "DAY_STEM_QUESTIONER_HOUR_STEM_MATTER",
-      "YONGSHEN_PALACE_BUNDLE",
-      "THREE_CHAIN_SEPARATION"
-    ],
-    "unknowns_retained": [
-      "UNIFIED_LATE_ZI_POLICY",
-      "SINGLE_FINAL_HIDDEN_STEM_METHOD"
-    ]
-  },
-  "source_snapshots": [
-    {
-      "repository": "qfdk/qimen",
-      "commit": "8a9734a3fcaa01adc8bffc7c4b983c00ad932868",
-      "license": "MIT",
-      "inspected_paths": ["README.md", "LICENSE", "package.json", "test/paipan.test.js", "test/jieduan.test.js", "lib/jieduan.js"],
-      "reuse_mode": "ATTRIBUTED_BENCHMARK_CANDIDATES_AND_DESIGN_REFERENCE"
-    },
-    {
-      "repository": "MrJelly/QiMenDunJia",
-      "commit": "bc39883e39311208586697e3e60138b1590429a6",
-      "license": "MIT",
-      "inspected_paths": ["README.md", "package.json"],
-      "reuse_mode": "INDEPENDENT_SNAPSHOT_AND_BOUNDARY_CONTRACT_REWRITE"
-    },
-    {
-      "repository": "Taogram/taobi",
-      "commit": "0be843be2190b5525d4591f843062a40dfc8b37b",
-      "license": "MPL-2.0",
-      "inspected_paths": ["readme.md", "LICENSE", "test/tools/arr.spec.js", "test/earths/earths.spec.js", "test/peoples/peoples.spec.js", "test/heavens/heavens.spec.js"],
-      "reuse_mode": "CONCEPT_AND_DIFFERENTIAL_ORACLE_REFERENCE_ONLY"
-    },
-    {
-      "repository": "kentang2017/kinqimen",
-      "commit": "f4c6118665253f897889290d8630f9b4cb3a4404",
-      "license": "MIT",
-      "inspected_paths": ["README.md", "kinqimen.py"],
-      "reuse_mode": "SECONDARY_DIFFERENTIAL_ENGINE_REFERENCE"
-    },
-    {
-      "repository": "perfhelf/bigfishmarquis-qimen",
-      "commit": "6112b3937d7fcaa2ab0a34aec2a52f74e2effe6c",
-      "license": "MIT",
-      "inspected_paths": ["README.md", "LICENSE", "src/data/yong_shen.json", "src/data/yun_chou.json"],
-      "reuse_mode": "SCHEMA_REFERENCE_ONLY_NO_RULE_NARRATIVE_COPY"
-    },
-    {
-      "repository": "redrockhorse/qimenpaipan",
-      "commit": "b6de54245cf7a514f59e51833dc01a87e1a3a849",
-      "license": "MIT",
-      "inspected_paths": ["README.md", "recent commits"],
-      "reuse_mode": "EPHEMERIS_DIFFERENTIAL_CANDIDATE_ONLY"
-    },
-    {
-      "repository": "skyfiredao/qmenpowers",
-      "commit": "1dd16a34a9e98fa3693f54963e85111680fc6046",
-      "license": "GPL-3.0",
-      "inspected_paths": ["README.md", "README_zh.md", "LICENSE", "skills/qmen_huaqizhen/SKILL.md", "skills/qmen_yishenhuanjiang/SKILL.md", "skills/qmen_xunshijieyun/SKILL.md"],
-      "reuse_mode": "CONCEPT_ONLY_NO_CODE_OR_DATA_COPY",
-      "lineage_role": "SAME_UPSTREAM_LINEAGE_CONFIRMED_FOR_SIX_HARMS_AND_HUAQIZHEN",
-      "evidence_role": "ENGINEERING_REFERENCE_NOT_INDEPENDENT_METAPHYSICAL_VALIDATION"
-    },
-    {
-      "source": "遁甲演義（四庫全書本）",
-      "sites": ["Wikisource", "Chinese Text Project"],
-      "license": "PUBLIC_DOMAIN_TEXT_WITH_TRANSCRIPTION_CAUTION",
-      "reuse_mode": "SOURCE_MAP_AND_LINE_BY_LINE_EXTRACTION_CANDIDATE"
-    }
-  ],
   "local_files": [
     "README.md",
-    "qimen_internal_mainline_profile_v0.1.json",
-    "qimen_method_adapter_registry_v0.1.json",
-    "qimen_engine_output_schema_v0.1.json",
-    "qimen_differential_case_set_v0.1.json",
-    "qimen_mainline_integration_and_diff_guide_v0.1.md",
-    "qimen_operation_external_candidate_map_v0.1.md",
-    "qimen_operation_candidate_contract_v0.1.json",
-    "qimen_operation_gate_candidate_v0.1.md",
-    "qimen_timing_candidate_scoring_v0.1.md",
-    "qimen_external_source_registry_v0.2.json",
     "qimen_calendar_snapshot_schema_v0.1.json",
-    "qimen_plate_differential_harness_spec_v0.1.md",
-    "qimen_external_benchmark_vectors_qfdk_v0.1.json",
-    "qimen_interpretation_evidence_contract_v0.1.json",
     "qimen_classical_source_map_v0.1.md",
+    "qimen_differential_case_set_v0.1.json",
+    "qimen_engine_output_schema_v0.1.json",
+    "qimen_external_source_registry_v0.2.json",
     "qimen_import_decision_log_v0.2.md",
-    "tools/validate_qimen_import_package.py",
+    "qimen_interpretation_evidence_contract_v0.1.json",
+    "qimen_mainline_integration_and_diff_guide_v0.1.md",
+    "qimen_method_adapter_registry_v0.1.json",
+    "qimen_plate_differential_harness_spec_v0.1.md",
     "tools/qimen_diff_harness.py",
+    "tools/validate_qimen_import_package.py",
     "tests/test_qimen_diff_harness.py",
     "EXTERNAL_LICENSE_NOTICE.md",
-    "IMPORT_MANIFEST.json"
+    "IMPORT_MANIFEST.json",
+    ".github/workflows/qimen-import-check.yml"
+  ],
+  "excluded_candidate_files": [
+    "qimen_internal_mainline_profile_v0.1.json",
+    "qimen_external_benchmark_vectors_qfdk_v0.1.json",
+    "qimen_operation_candidate_contract_v0.1.json",
+    "qimen_operation_external_candidate_map_v0.1.md",
+    "qimen_operation_gate_candidate_v0.1.md",
+    "qimen_timing_candidate_scoring_v0.1.md"
   ],
   "imported_engineering_concepts": [
-    "DETERMINISTIC_COMPUTE_SEPARATE_FROM_AI_INTERPRETATION",
-    "MODULAR_OPERATION_ROUTER",
-    "RAW_OUTPUT_BEFORE_INTERPRETATION",
-    "STRUCTURED_JSON_CONTRACT",
-    "SOURCE_BOUNDED_SYMBOL_MAPPING",
-    "CANDIDATE_TIME_ENUMERATION",
-    "HARD_STOP_BEFORE_SCORING",
-    "PROVENANCE_LICENSE_AND_UPSTREAM_LINEAGE_TRACKING",
-    "ANOMALY_TAXONOMY_DECLARATION",
     "NORMALIZED_CALENDAR_SNAPSHOT",
-    "METHOD_ADAPTER_REGISTRY",
-    "LAYERED_DIFFERENTIAL_HARNESS",
-    "EXTERNAL_BENCHMARK_CANDIDATES",
-    "INTERPRETATION_EVIDENCE_CONTRACT",
-    "PUBLIC_DOMAIN_CLASSICAL_SOURCE_MAP",
-    "INTERNAL_MAINLINE_MACHINE_PROFILE",
+    "EXTERNAL_METHOD_ADAPTER_REGISTRY",
     "NORMALIZED_MULTI_ENGINE_OUTPUT",
+    "LAYERED_DIFFERENTIAL_HARNESS",
     "FIRST_DIVERGENCE_REPORTING",
+    "INTERPRETATION_EVIDENCE_CONTRACT",
+    "PROVENANCE_LICENSE_AND_LINEAGE_TRACKING",
     "AUTOMATED_STRUCTURE_AND_UNIT_TESTS"
   ],
-  "excluded_external_claims": [
-    "MINIMUM_XUNSHUANG_SIX_HARM_COUNT_EQUALS_BEST_TIME",
-    "BIRTH_PLATE_APPLIES_TO_ALL_EVENTS",
-    "SPECIFIC_OBJECT_PLACEMENT_HAS_PROVEN_CAUSAL_EFFECT",
-    "FIXED_THREE_MONTH_EFFECT",
-    "EXTERNAL_HIGH_INTERVENTION_METHODS_AS_FORMAL_RULES",
-    "EXECUTABLE_CODE_IMPLIES_METAPHYSICAL_VALIDITY",
-    "SAME_UPSTREAM_DERIVATIVES_COUNT_AS_INDEPENDENT_EVIDENCE",
-    "XUNSHUANG_SIX_HARMS_ARE_UNIVERSAL_YINPAN_CONSENSUS",
-    "UNSOURCED_SCORING_WEIGHTS_AS_FORMAL_INTERPRETATION",
-    "SELF_REPORTED_VALIDATION_WITHOUT_TEST_ARTIFACTS",
-    "MANIPULATIVE_OR_HARMFUL_OPERATION_NARRATIVES"
-  ],
-  "required_next_steps": [
-    "IMPLEMENT_INTERNAL_CALENDAR_AND_JU_CORE",
-    "NORMALIZE_QFDK_OUTPUT",
-    "NORMALIZE_MRJELLY_OUTPUT",
-    "RUN_THREE_ENGINE_DIFFERENTIAL_REPLAY",
-    "ADJUDICATE_FIRST_DIVERGENCE_BY_SIXTY_ONE_THREAD_AND_PRIMARY_SOURCES",
-    "IMPLEMENT_EARTH_PLATE_ZHIFU_ZHISHI_LAYER",
-    "THEN_IMPLEMENT_HEAVEN_PLATE_STARS_DOORS_GODS",
-    "KEEP_HIDDEN_STEM_BRANCH_DECLARED_UNTIL_FINAL_ADJUDICATION",
-    "RUN_HISTORICAL_REPLAY",
-    "RUN_ANSWER_ISOLATED_BLIND_TEST",
-    "HUMAN_AND_COLD_REVIEW_ADJUDICATION"
+  "hard_limits": [
+    "NO_FORMAL_RULE_PROMOTION",
+    "NO_EXTERNAL_ENGINE_AS_TRUTH_SOURCE",
+    "NO_SAME_LINEAGE_DOUBLE_COUNTING",
+    "NO_HIGH_INTERVENTION_OPERATION",
+    "NO_UNLICENSED_CODE_COPY"
   ]
 }
