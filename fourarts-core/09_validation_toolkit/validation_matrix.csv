@@ -1,0 +1,3 @@
+case_id,case_layer,art,question_or_subject,input_ref,source_url,source_level,usable_status,reviewer,result_status,expected_or_observed_outcome,judgment_output_ref,evidence_ref,sealed_sha256,unknowns,notes
+TEMPLATE-STATIC-001,STATIC,BAZI,REPLACE_ME,REPLACE_ME,REPLACE_ME,UNKNOWN,WARN,UNASSIGNED,NOT_RUN,,,,,"missing verified source;missing reviewer","Template row; replace or delete before formal use"
+TEMPLATE-DYNAMIC-001,DYNAMIC,LIUREN,REPLACE_ME,REPLACE_ME,REPLACE_ME,UNKNOWN,BLOCK,UNASSIGNED,NOT_RUN,,,,,"missing exact question time;missing outcome evidence","Template row; replace or delete before formal use"
