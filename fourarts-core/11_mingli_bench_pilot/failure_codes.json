@@ -1,0 +1,11 @@
+{
+  "CHART_ERROR": "ASTRO_OFF 排盤錯誤，或 ASTRO_ON 預排盤與核對基準不一致。",
+  "INTERPRETATION_ERROR": "排盤可接受，但題目判斷錯誤。",
+  "INPUT_LOCATION_WARN": "出生地僅國家／大區，無法精確處理時區或真太陽時。",
+  "TIMEZONE_MISSING_WARN": "未提供明確 IANA 時區。",
+  "DAY_BOUNDARY_MISSING_WARN": "未聲明換日規則。",
+  "PRECOMPUTED_CHART_MISMATCH_BLOCK": "預排盤與輸入出生資料不一致，該案停止。",
+  "ANSWER_LEAKAGE_BLOCK": "執行模型、提示詞或工具可接觸答案鍵。",
+  "DATASET_TRUTH_ONLY": "答案僅是資料集標準答案，不等於現實真相。",
+  "FORMAT_ERROR": "輸出不是 A/B/C/D 或缺少 question_id。"
+}
