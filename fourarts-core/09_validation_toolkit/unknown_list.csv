@@ -1,0 +1,3 @@
+unknown_id,case_id,field_name,description,impact,required_action,owner,status,resolution_ref,notes
+UNK-TEMPLATE-001,TEMPLATE-STATIC-001,source_url,Verified source is missing,WARN,Locate primary or official source,UNASSIGNED,OPEN,,Template row; replace or delete before formal use
+UNK-TEMPLATE-002,TEMPLATE-DYNAMIC-001,question_time,Exact question time is missing,BLOCK,Record exact timestamp timezone and day-boundary rule,UNASSIGNED,OPEN,,Template row; replace or delete before formal use
