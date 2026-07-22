@@ -1,0 +1,36 @@
+{
+  "package_id": "BAZIQA-PILOT-10-v1.0",
+  "created_at": "2026-07-22",
+  "source": {
+    "repository": "ChenJiangxi/BaziQA",
+    "commit": "8ea8222f8bd8ef8a6f1a5fb012344935a66e7686",
+    "path": "data/contest8_2025.json",
+    "source_blob_sha": "14f3e220ece5cc498777ddb274a609ac9dadc9d5"
+  },
+  "artifacts": [
+    {
+      "file": "source_license_audit.md",
+      "hash_mode": "raw_utf8_bytes",
+      "sha256": "afb9ee2d3a17d4450329516cea73cde51365d5c496ac2167c6d7a33bc210d94c"
+    },
+    {
+      "file": "blind_booklet.json",
+      "hash_mode": "canonical_json_utf8_sorted_keys",
+      "sha256": "06bdec6c639b0da8bca3cfaf034980a31e4593dd30339f87f7e0448cb2ccafb8"
+    },
+    {
+      "file": "sealed_answer_key.json",
+      "hash_mode": "canonical_json_utf8_sorted_keys",
+      "sha256": "84b6ad7ad27f193290e3e06b37d11bfa70add95966614223799107e91d7a36da"
+    },
+    {
+      "file": "review_packet_5_5.md",
+      "hash_mode": "raw_utf8_bytes",
+      "sha256": "390e2874a773611760e14bebb040e9abccb0c83e5042565aa6a14aa5fe61b15b"
+    }
+  ],
+  "blind_booklets": ["blind_booklet.json"],
+  "answer_leakage_gate": "PASS_BY_STRUCTURE",
+  "accuracy_claim": "BLOCKED_UNTIL_CLEAN_INDEPENDENT_RUN",
+  "package_status": "ENGINEERING_COMPLETE"
+}
