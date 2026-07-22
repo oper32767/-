@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/fourarts/case_schema.json",
+  "title": "FourArts Validation Case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "case_layer",
+    "art",
+    "question_or_subject",
+    "input_ref",
+    "source_url",
+    "source_level",
+    "usable_status",
+    "reviewer",
+    "result_status",
+    "unknowns"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "case_layer": {"type": "string", "enum": ["STATIC", "DYNAMIC"]},
+    "art": {"type": "string", "enum": ["BAZI", "ZIWEI", "LIUREN", "QIMEN", "INTEGRATED"]},
+    "question_or_subject": {"type": "string", "minLength": 1},
+    "input_ref": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "minLength": 1},
+    "source_level": {"type": "string", "enum": ["PRIMARY", "OFFICIAL", "SECONDARY", "TEACHING", "UNKNOWN"]},
+    "usable_status": {"type": "string", "enum": ["PASS", "WARN", "BLOCK"]},
+    "reviewer": {"type": "string", "minLength": 1},
+    "result_status": {"type": "string", "enum": ["NOT_RUN", "PASS", "WARN", "BLOCK", "INCONCLUSIVE"]},
+    "expected_or_observed_outcome": {"type": ["string", "null"]},
+    "judgment_output_ref": {"type": ["string", "null"]},
+    "evidence_ref": {"type": ["string", "null"]},
+    "sealed_sha256": {"type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$"},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": ["string", "null"]}
+  }
+}
