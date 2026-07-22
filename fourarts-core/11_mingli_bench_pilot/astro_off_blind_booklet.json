@@ -1,0 +1,79 @@
+{
+  "pilot_id": "MINGLI-PILOT-10-v1.0",
+  "mode": "ASTRO_OFF",
+  "created_at": "2026-07-22",
+  "source": {
+    "repository": "DestinyLinker/MingLi-Bench",
+    "commit": "b7433280fd86d7a7c27debbc47d0303c218f0bfd",
+    "question_path": "data/data.json",
+    "question_blob_sha": "6543b077fe4b76ab0a9f4d8e32959b4144ae6fa0",
+    "astro_path": "data/fortune_api_results.json",
+    "astro_blob_sha": "bf128852622cd0b4775c53bb256a63b959bcbce9"
+  },
+  "selection": {
+    "method": "固定選取 data.json 前10題；不依答案挑題",
+    "cases": 2,
+    "questions": 10
+  },
+  "input_contract": "只提供出生資料、題目與選項；同時測試排盤與解讀。",
+  "execution_rules": {
+    "answer_key_access": "禁止執行模型存取 sealed_answer_key.json",
+    "scoring": "exact_match",
+    "dataset_answer_role": "dataset_ground_truth，不等於 reality_truth",
+    "output_schema": {
+      "question_id": "string",
+      "answer": "A|B|C|D",
+      "reasoning_summary": "optional string"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "case_1",
+      "birth_info": {
+        "raw": "男命：1974年4月28日下午4:40分 出生地點：usa",
+        "gender": "男",
+        "year": 1974,
+        "month": 4,
+        "day": 28,
+        "hour": 16,
+        "minute": 40,
+        "country": "usa",
+        "location": "usa",
+        "calendar_type": "solar"
+      },
+      "gate_status": "WARN",
+      "warning_codes": ["INPUT_LOCATION_TOO_COARSE", "TIMEZONE_NOT_EXPLICIT"],
+      "questions": [
+        {"id": "ftb_0001", "question": "此命1996年發生何事？", "options": [{"letter":"A","text":"患上嚴重抑鬱症"},{"letter":"B","text":"回港認識現任妻子"},{"letter":"C","text":"交通意外，撞車，人平安"},{"letter":"D","text":"得到一筆意外之財"}], "category":"健康"},
+        {"id": "ftb_0002", "question": "此命何年結婚？", "options": [{"letter":"A","text":"1999"},{"letter":"B","text":"2002"},{"letter":"C","text":"2006"},{"letter":"D","text":"到2022年為止，單身"}], "category":"婚姻"},
+        {"id": "ftb_0003", "question": "此命2008年發生何事？", "options": [{"letter":"A","text":"買賣股票，輸了很多錢"},{"letter":"B","text":"與朋友合作生意，賺了很多錢"},{"letter":"C","text":"祖母過世，自己生病，要一段時間長期食藥"},{"letter":"D","text":"交通意外，發現有遺傳病"}], "category":"健康"},
+        {"id": "ftb_0004", "question": "此命父親是那一年仙逝？", "options": [{"letter":"A","text":"2009"},{"letter":"B","text":"2013"},{"letter":"C","text":"2018"},{"letter":"D","text":"2020"}], "category":"家庭"},
+        {"id": "ftb_0005", "question": "此命2020年發生何事？", "options": [{"letter":"A","text":"工作升職得財"},{"letter":"B","text":"因長期食藥，導致健康出問題"},{"letter":"C","text":"此年太太懷孕，得子"},{"letter":"D","text":"因病逝世"}], "category":"健康"}
+      ]
+    },
+    {
+      "case_id": "case_2",
+      "birth_info": {
+        "raw": "女命：陽曆1981年5月26日凌晨02:17 出生地點：中國香港",
+        "gender": "女",
+        "year": 1981,
+        "month": 5,
+        "day": 26,
+        "hour": 2,
+        "minute": 17,
+        "country": "中國",
+        "location": "香港",
+        "calendar_type": "solar"
+      },
+      "gate_status": "WARN",
+      "warning_codes": ["TIMEZONE_NOT_EXPLICIT"],
+      "questions": [
+        {"id": "ftb_0006", "question": "此命的學歷如何？", "options": [{"letter":"A","text":"中七畢業"},{"letter":"B","text":"2002年升學內地，2006年大學畢業"},{"letter":"C","text":"預科後升本地大學，2004年大學畢業"},{"letter":"D","text":"中五後，1998年出國留學"}], "category":"學業"},
+        {"id": "ftb_0007", "question": "這命何時候結婚？", "options": [{"letter":"A","text":"2005年結婚"},{"letter":"B","text":"2006年先簽紙結婚，2007年擺酒"},{"letter":"C","text":"2012年結婚，旅行外地簽紙"},{"letter":"D","text":"2009年結婚"}], "category":"婚姻"},
+        {"id": "ftb_0008", "question": "此命有一名女兒於何年出生？", "options": [{"letter":"A","text":"2007年"},{"letter":"B","text":"2009年"},{"letter":"C","text":"2012年"},{"letter":"D","text":"2015年"}], "category":"子女"},
+        {"id": "ftb_0009", "question": "身材？", "options": [{"letter":"A","text":"高挑，瘦削"},{"letter":"B","text":"高挑，肥胖"},{"letter":"C","text":"矮小，瘦削"},{"letter":"D","text":"矮小，肥胖"}], "category":"外貌"},
+        {"id": "ftb_0010", "question": "父母情況？", "options": [{"letter":"A","text":"1988年父母離異，隨母親成長"},{"letter":"B","text":"1999年父親出現婚外情，直至2009年父親離開母親，但沒有離婚"},{"letter":"C","text":"2000年父親出現婚外情，2021年父母離婚"},{"letter":"D","text":"2003年父母離婚，父親再婚同年生一子"}], "category":"家庭"}
+      ]
+    }
+  ]
+}
