@@ -1,0 +1,120 @@
+{
+  "pilot_id": "BAZIQA-PILOT-10-v1.0",
+  "created_at": "2026-07-22",
+  "language": "zh-TW",
+  "source": {
+    "repository": "ChenJiangxi/BaziQA",
+    "commit": "8ea8222f8bd8ef8a6f1a5fb012344935a66e7686",
+    "path": "data/contest8_2025.json",
+    "source_blob_sha": "14f3e220ece5cc498777ddb274a609ac9dadc9d5"
+  },
+  "selection": {
+    "method": "固定選取來源檔前兩位命主、前10題；不依答案挑題",
+    "persons": 2,
+    "questions": 10
+  },
+  "execution_rules": {
+    "answer_key_access": "禁止執行模型存取 sealed_answer_key.json",
+    "output_schema": {
+      "question_id": "string",
+      "answer": "A|B|C|D",
+      "reasoning_summary": "optional string"
+    },
+    "scoring": "exact_match",
+    "status_policy": {
+      "PASS": "可計入本次資料集內部題目命中率",
+      "WARN": "保留但不計正式準度",
+      "BLOCK": "排除且停止該題"
+    }
+  },
+  "cases": [
+    {
+      "person_id": "guangdong_female_19511114_P001",
+      "name": "1951年廣東出生女性",
+      "profile": {
+        "birth": {
+          "year": 1951,
+          "month": 11,
+          "day": 14,
+          "hour": 10,
+          "minute": 0,
+          "place": "廣東，中國",
+          "approximate": false,
+          "source_raw": "1951-11-14T09:00 - 廣東，中國（西曆：1951年11月14日巳時，廣東出生）"
+        },
+        "gender": "female"
+      },
+      "questions": [
+        {
+          "question_id": "guangdong_female_19511114_P001-Q1",
+          "question": "此命出生家境如何？",
+          "options": ["A. 富裕", "B. 貧窮", "C. 父從商母是村幹部", "D. 父母當官"]
+        },
+        {
+          "question_id": "guangdong_female_19511114_P001-Q2",
+          "question": "婚姻如何？",
+          "options": ["A. 一婚", "B. 二婚", "C. 一生未嫁", "D. 夫早亡"]
+        },
+        {
+          "question_id": "guangdong_female_19511114_P001-Q3",
+          "question": "此人年輕時何種工作？",
+          "options": ["A. 父母有錢，不用工作", "B. 家貧，十多歲賣藝為生", "C. 父母幫助，自己創業", "D. 生活困難做舞女"]
+        },
+        {
+          "question_id": "guangdong_female_19511114_P001-Q4",
+          "question": "1980年發生何事？",
+          "options": ["A. 結婚", "B. 交通意外", "C. 被人打劫受傷", "D. 得到意外偏財"]
+        },
+        {
+          "question_id": "guangdong_female_19511114_P001-Q5",
+          "question": "1993年發生何事？",
+          "options": ["A. 貴人相扶得財", "B. 丈夫病亡", "C. 交通意外入院手術", "D. 父親病亡"]
+        }
+      ]
+    },
+    {
+      "person_id": "hongkong_female_19870705_P002",
+      "name": "1987年香港出生女性",
+      "profile": {
+        "birth": {
+          "year": 1987,
+          "month": 7,
+          "day": 5,
+          "hour": 12,
+          "minute": 0,
+          "place": "香港，中國",
+          "approximate": false,
+          "source_raw": "1987-07-05T11:00 - 香港，中國（西曆：1987年07月05日午時 香港出生）"
+        },
+        "gender": "female"
+      },
+      "questions": [
+        {
+          "question_id": "hongkong_female_19870705_P002-Q6",
+          "question": "2022年至現在，命主的健康狀況如何？",
+          "options": ["A. 健康少病痛，但有皮膚敏感問題，需戒吃海鮮", "B. 這數年間，做過大型手術，曾有生命危險", "C. 體弱多病，而且患有糖尿病，病情反覆", "D. 身材變得肥胖，肝、腸胃問題，以及有腳患困擾"]
+        },
+        {
+          "question_id": "hongkong_female_19870705_P002-Q7",
+          "question": "命主的性格特質、學歷水平和現時職業情況如何？",
+          "options": ["A. 平庸懶惰，大學畢業，普通受薪階層", "B. 聰敏不讀書，中學畢業，兼職為主", "C. 不聰敏但勤力，大學畢業，經營家族生意", "D. 聰敏能讀書，碩士博士，企業的管理層"]
+        },
+        {
+          "question_id": "hongkong_female_19870705_P002-Q8",
+          "question": "命主在2018年至現在，財政狀態和事業運勢怎樣？",
+          "options": ["A. 感情豐富，積蓄全無，幸有固定工作，收入穩定，彌補損失", "B. 名成利就，工作順利，個人能力得以發揮，得到眾人賞識", "C. 自己當了老闆，生意額則一般，艱辛經營，尋求突破框架", "D. 不停轉工，財來財去，與家人居住，而且日常開支由伴侶負擔"]
+        },
+        {
+          "question_id": "hongkong_female_19870705_P002-Q9",
+          "question": "命主現時的婚姻狀況如何？",
+          "options": ["A. 婚姻美滿，夫妻二人相敬如賓", "B. 已婚，但經常被配偶言語傷害、責惹", "C. 離婚後再婚，現時感情穩定", "D. 同性戀者，得到伴侶愛護"]
+        },
+        {
+          "question_id": "hongkong_female_19870705_P002-Q10",
+          "question": "現時命主與父母的關係、家庭背景？",
+          "options": ["A. 家境富有，不愁衣食，與母親親密，和父親關係較疏離", "B. 家境曾經小康，父隨後生意失敗，父母與命主感情關係正常", "C. 從少貧窮，母親去世，父親養育命主，並與命主感情良好", "D. 父母離婚，各自提供基本生活費予命主，並僅少由外婆照顧"]
+        }
+      ]
+    }
+  ]
+}
