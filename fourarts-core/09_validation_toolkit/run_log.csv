@@ -1,0 +1,2 @@
+run_id,started_at,finished_at,executor,case_id,input_ref,rule_set_ref,gate_set_ref,result_status,blocking_reasons,warning_reasons,output_ref,reviewer,review_status,notes
+RUN-TEMPLATE-001,,,,TEMPLATE-STATIC-001,,,,NOT_RUN,,,,UNASSIGNED,PENDING,Template row; replace or delete before formal use
