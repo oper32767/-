@@ -1,0 +1,17 @@
+{
+  "pilot_id": "MINGLI-PILOT-10-v1.0",
+  "classification": "SEALED_ANSWER_KEY",
+  "dataset_ground_truth_only": true,
+  "answers": [
+    {"question_id": "ftb_0001", "answer": "A"},
+    {"question_id": "ftb_0002", "answer": "C"},
+    {"question_id": "ftb_0003", "answer": "C"},
+    {"question_id": "ftb_0004", "answer": "C"},
+    {"question_id": "ftb_0005", "answer": "B"},
+    {"question_id": "ftb_0006", "answer": "B"},
+    {"question_id": "ftb_0007", "answer": "B"},
+    {"question_id": "ftb_0008", "answer": "A"},
+    {"question_id": "ftb_0009", "answer": "D"},
+    {"question_id": "ftb_0010", "answer": "B"}
+  ]
+}
