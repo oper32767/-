@@ -1,0 +1,28 @@
+{
+  "package_id": "MINGLI-PILOT-10-v1.0",
+  "created_at": "2026-07-22",
+  "source": {
+    "repository": "DestinyLinker/MingLi-Bench",
+    "commit": "b7433280fd86d7a7c27debbc47d0303c218f0bfd",
+    "question_path": "data/data.json",
+    "question_blob_sha": "6543b077fe4b76ab0a9f4d8e32959b4144ae6fa0",
+    "astro_path": "data/fortune_api_results.json",
+    "astro_blob_sha": "bf128852622cd0b4775c53bb256a63b959bcbce9"
+  },
+  "artifacts": [
+    {"file":"source_license_audit.md","hash_mode":"raw_utf8_bytes","sha256":"aaaff615d4c784c5450af7d7e38573262964cf00da45c2553e2b291100d4e5fa"},
+    {"file":"chart_verification_sample.md","hash_mode":"raw_utf8_bytes","sha256":"74521b118ac8b43592d9bc77c60d20678f197bd5658a9e56a4dffca58435088f"},
+    {"file":"astro_off_blind_booklet.json","hash_mode":"canonical_json_utf8_sorted_keys","sha256":"ab8974b8d4ae1fb04eab22a675515426e68fb879ede2e65183cc11eeb2da80e2"},
+    {"file":"astro_on_blind_booklet.json","hash_mode":"canonical_json_utf8_sorted_keys","sha256":"2f554ac8fc4d5b101070a2f2811992cd834d712ab365fd352839c4f45eda419c"},
+    {"file":"sealed_answer_key.json","hash_mode":"canonical_json_utf8_sorted_keys","sha256":"34ee33cbf9280e5f4430c428b944c9a0bbe991b2cbd53ce120e929695d1c4066"},
+    {"file":"failure_codes.json","hash_mode":"canonical_json_utf8_sorted_keys","sha256":"1978568021714d5d56d0493c841e659f7cb052402d03fd802b72e4725b210ba9"},
+    {"file":"astro_on_vs_off_difference_report.md","hash_mode":"raw_utf8_bytes","sha256":"a85670eb7882ee47f960ec80ff17605d5e69289242fba0d0b879b03acec112c8"},
+    {"file":"review_packet_5_5.md","hash_mode":"raw_utf8_bytes","sha256":"72913d21b6147e4aafacc30f2705a727fc626a1c3c37edc6ba0c800b2f7f0ca3"}
+  ],
+  "blind_booklets": ["astro_off_blind_booklet.json", "astro_on_blind_booklet.json"],
+  "input_parity_gate": "PASS_BY_BASE_BOOKLET_REFERENCE",
+  "chart_linkage_gate": "PASS_WITH_WARNINGS",
+  "answer_leakage_gate": "PASS_BY_STRUCTURE",
+  "accuracy_claim": "BLOCKED_UNTIL_CLEAN_INDEPENDENT_RUN",
+  "package_status": "ENGINEERING_COMPLETE"
+}
