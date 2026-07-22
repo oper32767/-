@@ -1,0 +1,67 @@
+{
+  "pilot_id": "MINGLI-PILOT-10-v1.0",
+  "mode": "ASTRO_ON",
+  "created_at": "2026-07-22",
+  "base_question_booklet": {
+    "file": "astro_off_blind_booklet.json",
+    "canonical_json_sha256": "ab8974b8d4ae1fb04eab22a675515426e68fb879ede2e65183cc11eeb2da80e2",
+    "instruction": "沿用完全相同題目與選項；忽略 ASTRO_OFF 的 input_contract，改用本檔預排盤輸入。"
+  },
+  "input_contract": "提供出生資料、題目、選項與固定版本的預排盤摘要；完整盤由 pinned full_chart_ref 取得。",
+  "astro_snapshots": {
+    "case_1": {
+      "verification_status": "WARN",
+      "warning_codes": ["INPUT_LOCATION_TOO_COARSE", "TIMEZONE_NOT_EXPLICIT"],
+      "birth_match": "MATCH",
+      "solar_date": "1974-04-28",
+      "lunar_date": "一九七四年四月初七",
+      "bazi": "甲寅 戊辰 己亥 壬申",
+      "time": "申時",
+      "time_range": "15:00~17:00",
+      "body_palace_branch": "丑",
+      "soul_palace_branch": "酉",
+      "soul_star": "文曲",
+      "body_star": "天梁",
+      "five_elements_class": "金四局",
+      "full_chart_ref": {
+        "repository": "DestinyLinker/MingLi-Bench",
+        "commit": "b7433280fd86d7a7c27debbc47d0303c218f0bfd",
+        "path": "data/fortune_api_results.json",
+        "blob_sha": "bf128852622cd0b4775c53bb256a63b959bcbce9",
+        "case_id": "case_1"
+      }
+    },
+    "case_2": {
+      "verification_status": "WARN",
+      "warning_codes": ["TIMEZONE_NOT_EXPLICIT"],
+      "birth_match": "MATCH",
+      "solar_date": "1981-05-26",
+      "lunar_date": "一九八一年四月廿三",
+      "bazi": "辛酉 癸巳 甲辰 乙丑",
+      "time": "丑時",
+      "time_range": "01:00~03:00",
+      "body_palace_branch": "午",
+      "soul_palace_branch": "辰",
+      "soul_star": "廉貞",
+      "body_star": "天同",
+      "five_elements_class": "水二局",
+      "full_chart_ref": {
+        "repository": "DestinyLinker/MingLi-Bench",
+        "commit": "b7433280fd86d7a7c27debbc47d0303c218f0bfd",
+        "path": "data/fortune_api_results.json",
+        "blob_sha": "bf128852622cd0b4775c53bb256a63b959bcbce9",
+        "case_id": "case_2"
+      }
+    }
+  },
+  "execution_rules": {
+    "answer_key_access": "禁止執行模型存取 sealed_answer_key.json",
+    "scoring": "exact_match",
+    "dataset_answer_role": "dataset_ground_truth，不等於 reality_truth",
+    "output_schema": {
+      "question_id": "string",
+      "answer": "A|B|C|D",
+      "reasoning_summary": "optional string"
+    }
+  }
+}
